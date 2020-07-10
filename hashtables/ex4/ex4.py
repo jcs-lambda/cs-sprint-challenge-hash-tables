@@ -2,7 +2,16 @@ def has_negatives(a):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    a = sorted(a)
+
+    ht = {}
+    result = []
+
+    for x in a:
+        if x < 0:
+            ht[abs(x)] = True
+        elif x in ht:
+            result.append(x)
 
     return result
 

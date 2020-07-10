@@ -2,7 +2,16 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    result = []
+
+    seen = {}
+
+    for array in arrays:
+        for value in array:
+            if value in seen and value not in result:
+                result.append(value)
+            else:
+                seen[value] = True
 
     return result
 

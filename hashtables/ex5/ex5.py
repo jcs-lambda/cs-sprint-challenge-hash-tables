@@ -1,12 +1,20 @@
-# Your code here
-
+from os.path import basename
 
 
 def finder(files, queries):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    ht = {}
+
+    for path in files:
+        x = ht.setdefault(basename(path), [])
+        x.append(path)
+    
+    result = []
+    for query in queries:
+        if query in ht:
+            result += ht[query]
 
     return result
 
